@@ -1,0 +1,5 @@
+3-A) saidas: 2.5 2.5 (iguais)
+
+3-B) saidas: 0.5 2.5 (Diferentes)
+
+3-C) saidas: 8 4 (Diferentes)
