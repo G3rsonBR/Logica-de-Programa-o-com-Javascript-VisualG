@@ -1,0 +1,25 @@
+EXERCÍCIO 34 - Teste de Mesa
+
+1) 11 | B
+2) 455| C
+3) -2 | A
+4) -5 | A
+5) 155| C
+
+Algoritmo para os testes: 
+leia(x)
+   leia(y)
+   z <- (x*y) + 5
+   se z <= 0 então
+      resposta <- "A"
+   senão
+      se z <= 100 então
+         resposta <- "B"
+      senão
+         resposta <- "C"
+      fimSe
+   fimSe
+
+   escreval(z)
+   escreva(resposta)
+
