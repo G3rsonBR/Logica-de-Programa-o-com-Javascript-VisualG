@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de JS com tag Script BODY</title>
+</head>
+<body>
+  <h2>Título</h2>
+  <p id="texto">Batata</p>
+
+  <button type="button" onclick="trocaTexto()">Trocar Texto</button>
+  <button type="button" onclick="document.getElementById('texto').innerHTML = 'Batata';">Devolve Texto</button>
+
+  <script>
+    function trocaTexto() {
+      document.getElementById('texto').innerHTML = "Batata Frita";
+    }
+  </script>
+</body>
+</html>
