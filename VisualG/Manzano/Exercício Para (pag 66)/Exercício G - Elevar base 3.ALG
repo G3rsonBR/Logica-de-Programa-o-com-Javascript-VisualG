@@ -1,24 +1,23 @@
-Algoritmo "Exercício5E"
+Algoritmo "Exercícios1G"
 // Disciplina   : [Linguagem e Lógica de Programação com JS]
 // Professor   : Jailson
-// Descrição   : Potencias de 3, do exponente 0 ao 15
+// Descrição   : Elevar base 3 sem usar a exponenciação tradicional
 // Autor(a)    : Gerson Lucas Silva Leite
-// Data atual  : 05/04/2024
+// Data atual  : 06/04/2024
 Var
-   calc, count, base: inteiro
+   count: inteiro
+   calc, base: real
 
 Inicio
-   base <- 3
 
-   Escreva("")
-   Enquanto count <= 15 faca
+   base <- 3
+   para count de 0 ate 15 passo 1 faca
       Se count = 0 entao
          calc <- 1
       Senao
          calc <- calc * base
          Escreval(base," ^",count," é:", calc)
       FimSe
-      count <- count + 1
-   FimEnquanto
+   FimPara
 
 Fimalgoritmo
