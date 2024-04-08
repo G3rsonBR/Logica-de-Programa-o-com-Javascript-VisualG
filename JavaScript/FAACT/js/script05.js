@@ -1,4 +1,4 @@
-// Exercício 5 - FAACT
+// Exercício 5 - FACCAT
 // EPS -> Entrada, Processamento, Saída
 
 var number = parseInt(prompt("Digite um número: "))

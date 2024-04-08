@@ -11,8 +11,8 @@ Inicio
 Escreva("Digite o valor de fabrica do veículo: ")
 Leia(custo)
 
-calc <- custo * (28/100) + custo * (45/100)
+calc <- custo * (28/100) + custo * (45/100) + custo
 
-Escreva("O valor final (impostos + valor do distribuidor) é: ", calc + custo )
+Escreva("O valor final (impostos + valor do distribuidor) é: ", calc )
 
 Fimalgoritmo
