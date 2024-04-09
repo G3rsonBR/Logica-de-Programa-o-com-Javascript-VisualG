@@ -5,14 +5,15 @@ const exercises = [];
 fetch("exercises.json")
   .then((resp) => resp.json())
   .then((data) => {
-    jsonDatas.push(data.exercises)
+    jsonDatas.push(data.exercises);
 
     jsonDatas.forEach((e) => {
       addTextoBtn.push(
-        e.forEach(el => {
-          addTextoBtn.push(el)
-        }))
-    })
+        e.forEach((el) => {
+          addTextoBtn.push(el);
+        })
+      );
+    });
     // Se uma função existir, adicione ela ao array
     addTextoBtn.forEach((e, index) => {
       let functionName = "exercise" + (index + 1);
@@ -20,11 +21,11 @@ fetch("exercises.json")
         exercises.push({
           id: index + 1,
           texto: e,
-          func: window[functionName] // Store the function reference
+          func: window[functionName],
         });
         console.log("A função " + functionName + " existe.");
       }
-    })
+    });
 
     exercises.forEach((e, index) => {
       let mainContent = document.querySelector(".exercises-box");
@@ -38,4 +39,4 @@ fetch("exercises.json")
   })
   .catch((error) => console.log(error));
 
-  export default addTextoBtn
+export default addTextoBtn;

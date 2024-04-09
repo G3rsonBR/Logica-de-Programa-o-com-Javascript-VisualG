@@ -5,6 +5,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  background-color: #faf1d9;
+}
+
 main {
   margin: 25px 0;
   width: 100%;

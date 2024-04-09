@@ -1,6 +1,7 @@
 import addTextoBtn  from './main.js'
+addTextoBtn.forEach(e => console.log(e))
 
-const numExercises = 28;
+let numExercises = 49
 
 for (let i = 1; i <= numExercises; i++) {
   window[`exercise${i}`] = eval(`exercise${i}`);
@@ -412,9 +413,9 @@ function exercise28() {
 
   alert(`Você escolheu o ${addTextoBtn[27]}! Clique para continuar.`);
 
-  let number1 = parseInt(prompt("Digite um número: "));
-  let number2 = parseInt(prompt("Digite um número: "));
-  let number3 = parseInt(prompt("Digite um número: "));
+  let number1 = parseInt(prompt("Digite o primeiro número: "));
+  let number2 = parseInt(prompt("Digite o segundo número: "));
+  let number3 = parseInt(prompt("Digite o terceiro número: "));
 
 
   if (number1 > number2) {
@@ -425,3 +426,52 @@ function exercise28() {
   else alert(`O maior número é: ${number3}`);
 }
 
+function exercise29() {
+  /**
+   * Ler 3 valores (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[28]}! Clique para continuar.`);
+
+  let number1 = parseInt(prompt("Digite o primeiro número: "));
+  let number2 = parseInt(prompt("Digite o segundo número: "));
+  let number3 = parseInt(prompt("Digite o terceiro número: "));
+  let somados = 0
+
+  if (number1 > number2) {
+    if (number2 > number3) somados = number1 + number2
+    else somados = number1 + number3
+  }
+  else if (number1 > number3) somados = number2 + number1
+  else somados = number2 + number3
+
+  alert(`A soma dos 2 maiores números informados é: ${somados}`);
+}
+
+function exercise30() {
+  /**
+   * Ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles.
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[29]}! Clique para continuar.`);
+
+  let number1 = parseInt(prompt("Digite o primeiro número: "));
+  let number2 = parseInt(prompt("Digite o segundo número: "));
+  let number3 = parseInt(prompt("Digite o terceiro número: "));
+  let ordem = []
+
+  if (number1 > number2) {
+    if (number2 > number3) ordem = [number3, number2, number1]
+    else ordem = [number2, number3, number1]
+  }
+  else if (number2 > number3) {
+    if (number3 > number1) ordem = [number1, number3, number2]
+    else ordem = [number3, number1, number2]
+  }
+  else {
+    if (number1 > number2) ordem = [number2, number1, number3]
+    else ordem = [number1, number2, number3]
+  }
+
+  alert(`Os número em ordem crescente: ${ordem}`);
+}
