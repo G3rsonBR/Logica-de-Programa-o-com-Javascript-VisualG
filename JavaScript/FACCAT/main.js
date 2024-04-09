@@ -6,8 +6,8 @@ fetch("exercises.json")
   .then((resp) => resp.json())
   .then((data) => {
     jsonDatas.push(data.exercises)
-    
-    jsonDatas.forEach( (e) => {
+
+    jsonDatas.forEach((e) => {
       addTextoBtn.push(
         e.forEach(el => {
           addTextoBtn.push(el)
@@ -19,7 +19,7 @@ fetch("exercises.json")
       if (typeof window[functionName] === "function") {
         exercises.push({
           exercise: i,
-          texto: addTextoBtn[i -1],
+          texto: addTextoBtn[i - 1],
         });
         console.log("A função " + functionName + " existe.");
       }
@@ -336,4 +336,86 @@ function exercise22() {
   } else salarioTotal = salarioHora * horasMes;
 
   alert(`O valor do seu salaário é de R$ ${salarioTotal}.`);
+}
+
+function exercise23() {
+  /**
+   * Programa que indica qual seu peso ideal de acordo com seu sexo
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[22]}! Clique para continuar.`);
+
+  let name = prompt("Digite o seu nome: ");
+  let sex = prompt("Digite o seu sexo (M/F): ");
+  let height = parseFloat(prompt("Digite o sua altura (use . no lugar da virgula): "))
+  let ideal = 0;
+
+  if (sex.toUpperCase() == "M") ideal = 72.7 * height - 58;
+  else if (sex.toUpperCase() == "F") ideal = 62.1 * height - 44.7;
+  alert(`${name}, o seu peso ideal é de ${ideal} kg.`);
+}
+
+function exercise24() {
+  /**
+   * Ler o salário fixo e o valor das vendas efetuadas pelo vendedor de uma empresa. Sabendo-se que
+    ele recebe uma comissão de 3% sobre o total das vendas até R$ 1.500,00 mais 5% sobre o que
+    ultrapassar este valor, calcular e escrever o seu salário total
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[23]}! Clique para continuar.`);
+
+  let salarioFixo = parseFloat(prompt("Digite seu salário fixo: "));
+  let totalVendas = parseFloat(prompt("Digite o valor total de vendas: "));
+  let salarioTotal, vendasExtras = 0
+
+  if (totalVendas > 1500) { vendasExtras = totalVendas - 1500; }
+
+  if (totalVendas <= 1500) salarioTotal = salarioFixo + totalVendas * 1.03;
+  else salarioTotal = salarioFixo + ((totalVendas - vendasExtras) * 1.03) + (vendasExtras * 1.05);
+  alert(`Seu salário total é: ${salarioTotal}`);
+}
+
+function exercise25() {
+  /**
+   * Faça um algoritmo para ler: número da conta do cliente, saldo, débito e crédito. Após, calcular e
+    escrever o saldo atual (saldo atual = saldo - débito + crédito). Também testar se saldo atual for maior
+    ou igual a zero escrever a mensagem 'Saldo Positivo', senão escrever a mensagem 'Saldo Negativo'. 
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[24]}! Clique para continuar.`);
+
+  let conta = parseInt(prompt("Digite o número da sua conta: "));
+  let saldo = parseFloat(prompt("Digite o valor do seu Saldo: "));
+  let debito = parseFloat(prompt("Digite o valor do seu Débito: "));
+  let credito = parseFloat(prompt("Digite o valor do seu Crédito: "));
+
+  let saldoAtual = saldo - debito + credito;
+  let isSaldo = ""
+
+  if (saldoAtual >= 0) isSaldo = "Saldo Positivo";
+  else isSaldo = "Saldo Negativo"; 
+  alert(`Sua conta é a de número: ${conta}\nSeu saldo é: ${isSaldo}`);
+}
+
+function exercise26() {
+  /**
+   * Faça um algoritmo para ler: quantidade atual em estoque, quantidade máxima em estoque e
+    quantidade mínima em estoque de um produto. Calcular e escrever a quantidade média ((quantidade
+    média = quantidade máxima + quantidade mínima)/2). Se a quantidade em estoque for maior ou igual
+    a quantidade média escrever a mensagem 'Não efetuar compra', senão escrever a mensagem 'Efetuar
+    compra'. 
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[25]}! Clique para continuar.`);
+
+  let quantProdAtual = parseInt(prompt("Digite a quantidade de produtos em estoque: "));
+  let quantMax = parseInt(prompt("Digite a quantidade máxima que o estoque comporta: "));
+  let quantMin = parseInt(prompt("Digite a quantidade mínima que o estoque precisa: "));
+
+  let quantMedia = (quantMax + quantMin) / 2;
+  let isEfetuar = ""
+
+  if (quantProdAtual >= quantMedia) isEfetuar = "Não efetuar compra";
+  else isEfetuar = "Efetuar compra";
+  alert(`A quantidade meça de estoque é: ${quantMedia}\n${isEfetuar}`);
 }
