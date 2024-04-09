@@ -393,7 +393,7 @@ function exercise25() {
   let isSaldo = ""
 
   if (saldoAtual >= 0) isSaldo = "Saldo Positivo";
-  else isSaldo = "Saldo Negativo"; 
+  else isSaldo = "Saldo Negativo";
   alert(`Sua conta é a de número: ${conta}\nSeu saldo é: ${isSaldo}`);
 }
 
@@ -418,4 +418,41 @@ function exercise26() {
   if (quantProdAtual >= quantMedia) isEfetuar = "Não efetuar compra";
   else isEfetuar = "Efetuar compra";
   alert(`A quantidade meça de estoque é: ${quantMedia}\n${isEfetuar}`);
+}
+
+function exercise27() {
+  /**
+   * Ler um valor e escrever se é positivo, negativo ou zero.
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[26]}! Clique para continuar.`);
+
+  let number = parseInt(prompt("Digite um número: "));
+  let isNumberWhat = ""
+
+  if (number > 0) isNumberWhat = "Positivo";
+  else if (number == 0) isNumberWhat = "Nulo";
+  else isNumberWhat = "Negativo";
+
+  alert(`O Número digitado é: ${isNumberWhat}`);
+}
+
+function exercise28() {
+  /**
+   * Ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles.
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[27]}! Clique para continuar.`);
+
+  let number1 = parseInt(prompt("Digite um número: "));
+  let number2 = parseInt(prompt("Digite um número: "));
+  let number3 = parseInt(prompt("Digite um número: "));
+
+
+  if (number1 > number2) {
+    if (number1 > number3) alert(`O maior número é: ${number1}`);
+    else alert(`O maior número é: ${number3}`);
+  }
+  else if (number2 > number3) alert(`O maior número é: ${number2}`);
+  else alert(`O maior número é: ${number3}`);
 }
