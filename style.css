@@ -24,6 +24,11 @@ main a {
   border-radius: 5px;
 }
 
+p {
+  width: 90%;
+  text-align: center;
+}
+
 .exercises-box {
   width: 90%;
   display: grid;

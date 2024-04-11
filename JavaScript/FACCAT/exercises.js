@@ -1,7 +1,7 @@
-import addTextoBtn  from './main.js'
+import addTextoBtn from './main.js'
 addTextoBtn.forEach(e => console.log(e))
 
-let numExercises = 49
+let numExercises = 46;
 
 for (let i = 1; i <= numExercises; i++) {
   window[`exercise${i}`] = eval(`exercise${i}`);
@@ -474,4 +474,218 @@ function exercise30() {
   }
 
   alert(`Os número em ordem crescente: ${ordem}`);
+}
+
+function exercise31() {
+  /**
+   * Ler 3 valores (A, B e C) representando as medidas dos lados de um triângulo e escrever se formam
+    ou não um triângulo. OBS: para formar um triângulo, o valor de cada lado deve ser menor que a soma
+    dos outros 2 lados. 
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[30]}! Clique para continuar.`);
+
+  let number1 = parseInt(prompt("Digite o primeiro número: "));
+  let number2 = parseInt(prompt("Digite o segundo número: "));
+  let number3 = parseInt(prompt("Digite o terceiro número: "));
+
+  if ((number1 > number2 + number3) || (number2 > number1 + number3) || (number3 > number1 + number2)) alert(`Os valores não forma um triângulo.`)
+  else alert(`Os valores formam um triângulo.`)
+}
+
+function exercise32() {
+  /**
+   * Ler o nome de 2 times e o número de gols marcados na partida (para cada time). Escrever o nome
+    do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE. 
+   */
+
+  alert(`Você escolheu o ${addTextoBtn[31]}! Clique para continuar.`);
+
+  let time1 = prompt("Digite o nome do primeiro time: ");
+  let time2 = prompt("Digite o nome do segundo time: ");
+
+  let gols1 = parseInt(prompt("Digite o número de gols do primeiro time: "));
+  let gols2 = parseInt(prompt("Digite o número de gols do segundo time: "));
+
+  let vencedor = ''
+
+  if (gols1 > gols2) vencedor = time1
+  else if (gols1 < gols2) vencedor = time2
+  else vencedor = 'EMPATE'
+
+  alert("O vencedor é: " + vencedor);
+
+}
+
+function exercise33() {
+  /* 
+    Ler dois valores e imprimir uma das três mensagens a seguir:
+      ‘Números iguais’, caso os números sejam iguais
+      ‘Primeiro é maior’, caso o primeiro seja maior que o segundo;
+      ‘Segundo maior’, caso o segundo seja maior que o primeiro.  
+  */
+
+  alert(`Você escolheu o ${addTextoBtn[32]}! Clique para continuar.`);
+
+  let number1 = parseInt(
+    prompt("Digite um número: ")
+  );
+  let number2 = parseInt(
+    prompt("Digite outro número: ")
+  );
+
+  let isMoreThen = number1 > number2 ? 'Primeiro maior' : number1 == number2 ? 'Iguais' : 'Segundo maior';
+
+  alert(`Sobre os números: ${isMoreThen}`);
+}
+
+// Daqui em diante, TODOS os exercicios são +1, então esse NÃO É o 34, é o 35!!!
+function exercise34() {
+  /*Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+  Álcool:até 20 litros, desconto de 3% por litro, acima de 20 litros, desconto de 5% por litro
+  Gasolina: até 20 litros, desconto de 4% por litro, acima de 20 litros, desconto de 6% por litro
+  Escreva um algoritmo que leia o número de litros vendidos e o tipo de combustível (codificado da
+  seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se
+  que o preço do litro da gasolina é R$ 3,30 e o preço do litro do álcool é R$ 2,90. 
+*/
+
+  alert(`Você escolheu o ${addTextoBtn[33]}! Clique para continuar.`);
+
+  alert(`Bem vindo ao posto de gasolina da Faccat\nÁlcool: R$2.90 / Gasolina: R$3.30`);
+  alert(`Álcool até 20L: 3% de desconto / Acima disso: 5% de desconto\nGasolina até 20L: 4% de desconto / Acima disso: 6% de desconto`);
+
+  let combustivel = prompt("Escolha o tipo de combustível (A - alcool, G - gasolina): ");
+  let litros = parseInt(prompt("Digite quantos litros deseja abastecer: "))
+  let preco = 0
+
+  if (litros > 20) {
+    if (combustivel.toUpperCase() == 'A') preco = litros * 2.9 * (1 - 0.05)
+    else if (combustivel.toUpperCase() == 'G') preco = litros * 3.3 * (1 - 0.05)
+  } else {
+    if (combustivel.toUpperCase() == 'A') preco = litros * 2.9 * (1 - 0.03)
+    else if (combustivel.toUpperCase() == 'G') preco = litros * 3.3 * (1 - 0.03)
+  }
+
+  alert(`O valor a ser pago é de R$${preco.toFixed(2)}`);
+}
+
+// ^ Até aqui foi tudo feito!!!
+function exercise35() {
+  /*  Escreva um algoritmo que leia as idades de 2 homens e de 2 mulheres (considere que as idades
+    dos homens serão sempre diferentes entre si, bem como as das mulheres). Calcule e escreva a soma
+    das idades do homem mais velho com a mulher mais nova, e o produto das idades do homem mais
+    novo com a mulher mais velha.
+  */
+  alert(`Você escolheu o ${addTextoBtn[34]}! Clique para continuar.`);
+
+  let idadeHomem1 = parseInt(prompt("Digite a idade do primeiro homem: "));
+  let idadeHomem2 = parseInt(prompt("Digite a idade do segundo homem: "));
+  let idadeMulher1 = parseInt(prompt("Digite a idade da primeira mulher: "));
+  let idadeMulher2 = parseInt(prompt("Digite a idade da segunda mulher: "));
+
+  let maiorH, menorH, maiorM, menorM;
+
+  if (idadeHomem1 > idadeHomem2) {
+    maiorH = idadeHomem1 
+    menorH = idadeHomem2
+  }
+  else {
+    maiorH = idadeHomem2
+    menorH = idadeHomem1
+  }
+  if (idadeMulher1 > idadeMulher2) {
+    maiorM = idadeMulher1
+    menorM = idadeMulher2
+  }
+  else {
+    maiorM = idadeMulher2
+  }
+
+  let somaIdades = maiorH + menorM
+  let multIdades = menorH * maiorM
+
+  alert(`A soma das idades do homem mais velho com a mulher mais nova é: ${somaIdades}`);
+  alert(`O produto das idades do homem mais novo com a mulher mais velha é: ${multIdades}`);
+}
+
+function exercise36() {
+  /*  Uma fruteira está vendendo frutas com a seguinte tabela de preços: 
+        Morango = 2,50 | Maca = 1,80 p/KG (até 5Kg)
+        Morango = 2,20 | Maca = 1,50 p/KG (acima de 5Kg)
+      Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00, receberá
+    ainda um desconto de 10% sobre este total. Escreva um algoritmo para ler a quantidade (em Kg) de
+    morangos e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente.
+  */
+  alert(`Você escolheu o ${addTextoBtn[35]}! Clique para continuar.`);
+
+}
+
+function exercise37() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[36]}! Clique para continuar.`);
+
+}
+
+function exercise38() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[37]}! Clique para continuar.`);
+
+}
+
+function exercise39() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[38]}! Clique para continuar.`);
+
+}
+
+function exercise40() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[39]}! Clique para continuar.`);
+
+}
+
+function exercise41() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[40]}! Clique para continuar.`);
+
+}
+
+function exercise42() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[41]}! Clique para continuar.`);
+
+}
+
+function exercise43() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[42]}! Clique para continuar.`);
+
+}
+
+function exercise44() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[43]}! Clique para continuar.`);
+
+}
+
+function exercise45() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[44]}! Clique para continuar.`);
+
+}
+
+function exercise46() {
+  /*   
+  */
+  alert(`Você escolheu o ${addTextoBtn[45]}! Clique para continuar.`);
+
 }
