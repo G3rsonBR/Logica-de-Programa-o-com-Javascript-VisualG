@@ -618,6 +618,23 @@ function exercise36() {
   */
   alert(`Você escolheu o ${addTextoBtn[35]}! Clique para continuar.`);
 
+alert(`A maçã custa R$1.80 até 5kg, e R$1.50 acima disso\nE morangos custam R$2.50 até 5kg, e R$2.20 acima disso.\nTemos também 10% de desconto se sua compra ultrapassar 8kg ou R$25.`)
+
+let macas = parseInt(prompt('Digite quantos Kg de maçã irá levar: '))
+let morangos = parseInt(prompt('Ditire quantos Kg de morango irá levar: '))
+
+let compra = 0
+let kgFinal = morangos + macas
+
+let totalMorangos = morangos > 5 ? morangos * 2.2 : morangos * 2.5
+
+let totalMacas = macas > 5 ? macas * 1.5 : macas * 1.8
+
+compra = totalMacas + totalMorangos
+if (kgFinal > 8 || compra > 25) compra -= (compra * 0.10)
+   
+alert(`Preço final: ${compra}`)
+  
 }
 
 function exercise37() {
