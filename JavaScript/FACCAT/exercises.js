@@ -569,7 +569,6 @@ function exercise34() {
   alert(`O valor a ser pago é de R$${preco.toFixed(2)}`);
 }
 
-// ^ Até aqui foi tudo feito!!!
 function exercise35() {
   /*  Escreva um algoritmo que leia as idades de 2 homens e de 2 mulheres (considere que as idades
     dos homens serão sempre diferentes entre si, bem como as das mulheres). Calcule e escreva a soma
@@ -586,7 +585,7 @@ function exercise35() {
   let maiorH, menorH, maiorM, menorM;
 
   if (idadeHomem1 > idadeHomem2) {
-    maiorH = idadeHomem1 
+    maiorH = idadeHomem1
     menorH = idadeHomem2
   }
   else {
@@ -618,91 +617,266 @@ function exercise36() {
   */
   alert(`Você escolheu o ${addTextoBtn[35]}! Clique para continuar.`);
 
-alert(`A maçã custa R$1.80 até 5kg, e R$1.50 acima disso\nE morangos custam R$2.50 até 5kg, e R$2.20 acima disso.\nTemos também 10% de desconto se sua compra ultrapassar 8kg ou R$25.`)
+  alert(`A maçã custa R$1.80 até 5kg, e R$1.50 acima disso\nE morangos custam R$2.50 até 5kg, e R$2.20 acima disso.\nTemos também 10% de desconto se sua compra ultrapassar 8kg ou R$25.`)
 
-let macas = parseInt(prompt('Digite quantos Kg de maçã irá levar: '))
-let morangos = parseInt(prompt('Ditire quantos Kg de morango irá levar: '))
+  let macas = parseInt(prompt('Digite quantos Kg de maçã irá levar: '))
+  let morangos = parseInt(prompt('Ditire quantos Kg de morango irá levar: '))
 
-let compra = 0
-let kgFinal = morangos + macas
+  let compra = 0
+  let kgFinal = morangos + macas
 
-let totalMorangos = morangos > 5 ? morangos * 2.2 : morangos * 2.5
+  let totalMorangos = morangos > 5 ? morangos * 2.2 : morangos * 2.5
 
-let totalMacas = macas > 5 ? macas * 1.5 : macas * 1.8
+  let totalMacas = macas > 5 ? macas * 1.5 : macas * 1.8
 
-compra = totalMacas + totalMorangos
-if (kgFinal > 8 || compra > 25) compra -= (compra * 0.10)
-   
-alert(`Preço final: ${compra}`)
-  
+  compra = totalMacas + totalMorangos
+  if (kgFinal > 8 || compra > 25) compra -= (compra * 0.10)
+
+  alert(`Preço final: ${compra}`)
+
 }
 
 function exercise37() {
-  /*   
+  /*   Faça um algoritmo para ler um número que é um código de usuário. Caso este código seja
+    diferente de um código armazenado internamente no algoritmo (igual a 1234) deve ser apresentada a
+    mensagem ‘Usuário inválido!’. Caso o Código seja correto, deve ser lido outro valor que é a senha. Se
+    esta senha estiver incorreta (a certa é 9999) deve ser mostrada a mensagem ‘senha incorreta’. Caso a
+    senha esteja correta, deve ser mostrada a mensagem ‘Acesso permitido’.
   */
   alert(`Você escolheu o ${addTextoBtn[36]}! Clique para continuar.`);
 
+  let login, senha, tentaLogin, tentaSenha;
+
+  login = 1234;
+  senha = 9999;
+
+  tentaLogin = parseInt(prompt("Digite o Login: "));
+
+  if (tentaLogin !== login) {
+    alert("Login inválido!");
+  } else {
+    tentaSenha = parseInt(prompt("Digite a Senha: "));
+
+    if (tentaSenha !== senha) alert("Senha inválida!");
+    else alert("Acesso Permitido!");
+  }
+
+
 }
 
+// Aqui também é +1 para frente, então não é 39, é 40!
 function exercise38() {
   /*   
+    Faça um algoritmo para ler: a descrição do produto (nome), a quantidade adquirida e o preço
+    unitário. Calcular e escrever o total (total = quantidade adquirida * preço unitário), o desconto e o total
+    a pagar (total a pagar = total - desconto), sabendo-se que:
+    - Se quantidade <= 5 o desconto será de 2%
+    - Se quantidade > 5 e quantidade <=10 o desconto será de 3%
+    - Se quantidade > 10 o desconto será de 5% 
   */
   alert(`Você escolheu o ${addTextoBtn[37]}! Clique para continuar.`);
 
+  let nomeProd, quantidade, precoUni, total, desconto;
+
+  nomeProd = prompt("Digite o nome do produto: ");
+  precoUni = parseFloat(prompt("Digite o preço unitário do produto: "));
+  quantidade = parseInt(prompt("Digite a quantidade adquirida: "));
+
+  total = quantidade * precoUni;
+
+  if (quantidade > 10) desconto = total * 0.05;
+  else {
+    if (quantidade > 5 && quantidade <= 10) desconto = total * 0.03;
+    else desconto = total * 0.02;
+  }
+
+  alert(`Produto: ${nomeProd}\nQuantidade: ${quantidade}\nPreço unitário: ${precoUni}\nTotal a pagar: ${total - desconto}`);
 }
 
 function exercise39() {
-  /*   
+  /*Faça um algoritmo para ler as 3 notas obtidas por um aluno nas 3 verificações e a média dos
+    exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula abaixo
+    e escrever o conceito do aluno de acordo com a tabela de conceitos mais abaixo:
+    Média_de_Aproveitamento = (N1 + N2 * 2 + N3 * 3 + Média_dos_Exercícios) / 7 
   */
+
   alert(`Você escolheu o ${addTextoBtn[38]}! Clique para continuar.`);
 
+  let nota1, nota2, nota3, mediaExercicios, mediaFinal, notaMedia;
+
+  nota1 = parseFloat(prompt("Digite a Primeira Nota: "));
+  nota2 = parseFloat(prompt("Digite a Segunda Nota: "));
+  nota3 = parseFloat(prompt("Digite a Terceira Nota: "));
+  mediaExercicios = parseFloat(prompt("Digite a Média dos Exercícios: "));
+
+  mediaFinal = (nota1 + (nota2 * 2) + (nota3 * 3) + mediaExercicios) / 7;
+
+  if (mediaFinal >= 9.0) notaMedia = "A";
+  else if (mediaFinal >= 7.5 && mediaFinal < 9.0) notaMedia = "B";
+  else if (mediaFinal >= 6.0 && mediaFinal < 7.5) notaMedia = "C";
+  else notaMedia = "D";
+
+  alert("O Aproveitamento Final é: " + notaMedia);
 }
 
 function exercise40() {
-  /*   
+  /*
+      Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não. Para
+    estar em condições, um dos seguintes requisitos deve ser satisfeito:
+    - Ter no mínimo 65 anos de idade.
+    - Ter trabalhado no mínimo 30 anos.
+    - Ter no mínimo 60 anos e ter trabalhado no mínimo 25 anos.
+    Com base nas informações acima, faça um algoritmo que leia: o número do empregado (código), o ano
+    de seu nascimento e o ano de seu ingresso na empresa. O programa deverá escrever a idade e o tempo
+    de trabalho do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'.
   */
+
   alert(`Você escolheu o ${addTextoBtn[39]}! Clique para continuar.`);
 
+  let vaiAposentar = "";
+  let anoAtual = Date().getFullYear();
+
+  let codFuncionario = parseInt(prompt("Digite seu ID de funcionário: "));
+  let nascimento = parseInt(prompt("Digite seu ano de nascimento: "));
+  let ingressoEmpresa = parseInt(prompt("Digite seu ano de entrada na empresa: "));
+
+  let idadeFuncionario = anoAtual - nascimento;
+  let tempoTrabalhado = anoAtual - ingressoEmpresa;
+
+  if (idadeFuncionario >= 65 || tempoTrabalhado >= 30 || (idadeFuncionario >= 60 && tempoTrabalhado >= 25)) vaiAposentar = "Requerer aposentadoria";
+  else vaiAposentar = "Não requerer";
+
+  alert(`Funcionário: ${codFuncionario}\nIdade: ${idadeFuncionario}\nTempo na Empresa: ${tempoTrabalhado}\nApto para aposentar: ${vaiAposentar}`);
 }
 
+// Aqui também é +1 para frente, então não é 43, é 44!
 function exercise41() {
-  /*   
+  /*  
+      Escreva um algoritmo para ler 2 valores e se o segundo valor informado for ZERO, deve ser lido
+    um novo valor, ou seja, para o segundo valor não pode ser aceito o valor zero e imprimir o resultado
+    da divisão do primeiro valor lido pelo segundo valor lido. (utilizar a estrutura REPITA).
   */
   alert(`Você escolheu o ${addTextoBtn[40]}! Clique para continuar.`);
 
+  let num1, num2;
+
+  num1 = parseInt(prompt("Digite o Primeiro valor: "));
+
+  do {
+    alert("Aviso: o segundo valor não pode ser 0...");
+    num2 = parseInt(prompt("Digite o Segundo valor: "));
+  } while (num2 === 0);
+
+  alert(`${num1} ${num2}`);
 }
 
 function exercise42() {
-  /*   
-  */
+  // Reescreva o exercício anterior utilizando a estrutura ENQUANTO. 
   alert(`Você escolheu o ${addTextoBtn[41]}! Clique para continuar.`);
 
+  let num1, num2;
+  num1 = parseInt(prompt("Digite o Primeiro valor: "));
+
+  while (num2 === 0) {
+    alert("Aviso: o segundo valor não pode ser 0...");
+    num2 = parseInt(prompt("Digite o Segundo valor: "));
+  }
+
+  alert(`${num1} ${num2}`);
 }
 
 function exercise43() {
   /*   
+    Acrescentar uma mensagem de 'VALOR INVÁLIDO' no exercício [44] caso o segundo valor
+    informado seja ZERO.
   */
   alert(`Você escolheu o ${addTextoBtn[42]}! Clique para continuar.`);
 
+  let num1, num2;
+
+  num1 = parseInt(prompt("Digite o Primeiro valor: "));
+
+  do {
+    num2 = parseInt(prompt("Digite o Segundo valor: "));
+    if (num2 === 0) alert("VALOR INVÁLIDO");
+  } while (num2 === 0);
+
+  alert(`${num1} ${num2}`);
 }
 
 function exercise44() {
   /*   
+    Acrescentar uma mensagem de 'VALOR INVÁLIDO' no exercício [45] caso o segundo valor
+    informado seja ZERO.
   */
   alert(`Você escolheu o ${addTextoBtn[43]}! Clique para continuar.`);
 
+  // Declaração das variáveis
+  let num1, num2;
+
+  num1 = parseInt(prompt("Digite o Primeiro valor: "));
+  while (num2 === 0) {
+    num2 = parseInt(prompt("Digite o Segundo valor: "));
+    if (num2 === 0) alert("VALOR INVÁLIDO");
+  }
+
+  alert(`${num1} ${num2}`);
 }
 
 function exercise45() {
   /*   
+    Escreva um algoritmo para ler as notas da 1a. e 2a. avaliações de um aluno, calcule e imprima a
+    média (simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10) para cada
+    nota. 
   */
+
   alert(`Você escolheu o ${addTextoBtn[44]}! Clique para continuar.`);
 
+  let nota1, nota2, media;
+  nota1 = -1;
+
+  while (nota1 < 0 || nota1 > 10) {
+    nota1 = parseInt(prompt("Digite a nota da Avaliação 1: "));
+    if (nota1 === 0) alert("VALOR INVÁLIDO");
+  }
+
+  do {
+    nota2 = parseInt(prompt("Digite a nota da Avaliação 2: "));
+    if (nota2 === 0) alert("VALOR INVÁLIDO");
+  } while (nota2 < 0 || nota2 > 10);
+
+  media = (nota1 + nota2) / 2;
+
+  alert(`Média do aluno: ${media}`);
 }
 
 function exercise46() {
-  /*   
+  /* 
+    Acrescente uma mensagem 'NOVO CÁLCULO (S/N)?' ao final do exercício [48]. Se for
+    respondido 'S' deve retornar e executar um novo cálculo, caso contrário deverá encerrar o algoritmo.
   */
   alert(`Você escolheu o ${addTextoBtn[45]}! Clique para continuar.`);
 
+  let nota1, nota2, media, novoCalc;
+
+  do {
+    nota1 = -1;
+
+    while (nota1 < 0 || nota1 > 10) {
+      nota1 = parseInt(prompt("Digite a nota da Avaliação 1: "));
+      if (nota1 === 0) alert("VALOR INVÁLIDO");
+    }
+
+    do {
+      nota2 = parseInt(prompt("Digite a nota da Avaliação 2: "));
+      if (nota2 === 0) alert("VALOR INVÁLIDO");
+    } while (nota2 < 0 || nota2 > 10);
+
+    media = (nota1 + nota2) / 2;
+    alert(`Média do aluno: ${media}`);
+    novoCalc = prompt("Novo Cálculo? (S/N)").toUpperCase();
+  } while (novoCalc === "S");
+
+  alert("Até a próxima");
 }
+// ^ Até aqui foi tudo feito!!!
