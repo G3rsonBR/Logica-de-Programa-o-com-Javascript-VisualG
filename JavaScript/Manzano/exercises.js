@@ -1,7 +1,7 @@
 import addTextoBtn from './main.js'
 addTextoBtn.forEach(e => console.log(e))
 
-let numExercises = 25;
+let numExercises = 60;
 
 for (let i = 1; i <= numExercises; i++) {
   window[`exercise${i}`] = eval(`exercise${i}`);
@@ -371,4 +371,269 @@ function exercise25() {
   if (sexo.toUpperCase() === "M") alert("Ilmo Sr. " + nome);
   else if (sexo.toUpperCase() === 'F') alert("Ilma Sra.: " + nome);
   else alert("Opção inválida");
+}
+// Fim Tarefas pag 41 e 42
+
+// Começo Tarefas pag 41 e 42
+function exercise26() {
+  alert(`Você escolheu o ${addTextoBtn[25]}! Clique para continuar.`);
+
+  let mult = 1;
+  let num = parseInt(prompt("Digite um número:"));
+
+  console.clear()
+  console.log("Exercício 26: Tabuada de um número");
+
+  while (mult <= 10) {
+    console.log(`${num} x ${mult} = ${num * mult}`);
+    mult++;
+  }
+
+  alert('Entre nas ferramentas de desenvolvedor para ver a tabuada');
+}
+
+function exercise27() {
+  alert(`Você escolheu o ${addTextoBtn[26]}! Clique para continuar.`);
+
+  let count = 1;
+  let soma = 0;
+
+  console.clear()
+  while (count <= 100) {
+    console.log(`${soma} + ${count} = ${soma + count}`);
+    soma += count;
+    count++;
+  }
+
+  alert("A soma de todos os cem primeiros números é: " + soma);
+}
+
+function exercise28() {
+  alert(`Você escolheu o ${addTextoBtn[27]}! Clique para continuar.`);
+
+  let count = 1;
+  let soma = 0;
+
+  console.clear()
+  while (count <= 500) {
+    if (count % 2 === 0) {
+      console.log(`${soma} + ${count} = ${soma + count}`);
+      soma += count;
+    }
+    count++;
+  }
+
+  alert("A soma dos pares de 1 a 500: ", soma);
+}
+
+function exercise29() {
+  alert(`Você escolheu o ${addTextoBtn[28]}! Clique para continuar.`);
+
+  let count = 1;
+
+  console.clear()
+  while (count <= 20) {
+    if (count % 2 === 1) {
+      console.log(count + " é ímpar");
+    }
+    count++;
+  }
+
+  alert("Entre nas ferramentas de desenvolvedor para ver os ímpares");
+}
+
+function exercise30() {
+  alert(`Você escolheu o ${addTextoBtn[29]}! Clique para continuar.`);
+
+  let calc = 0;
+  let count = 0;
+  const base = 3;
+
+  console.clear()
+  while (count <= 15) {
+    if (count === 0) {
+      calc = 1;
+    } else {
+      calc *= base;
+      console.log(`${base}^${count} = ${calc}`);
+    }
+    count++;
+  }
+  alert("Entre nas ferramentas de desenvolvedor para ver base 3 elevada até 15");
+}
+
+function exercise31() {
+  alert(`Você escolheu o ${addTextoBtn[30]}! Clique para continuar.`);
+
+  let valor = parseInt(prompt("Digite a Base: "));
+  let expoente = parseInt(prompt("Digite o Expoente: "));
+
+  let count = 0;
+  let elevado = 1;
+
+  console.clear()
+  while (count <= expoente) {
+    if (count === 0) {
+      elevado = 1;
+    } else {
+      elevado *= valor;
+    }
+    console.log(`${valor} elevado a ${count}: ${elevado}`);
+    count++;
+  }
+
+  alert("Entre nas ferramentas de desenvolvedor para ver o resultado");
+
+}
+
+function exercise32() {
+  alert(`Você escolheu o ${addTextoBtn[31]}! Clique para continuar.`);
+
+  let n1 = 0, n2 = 1, count = 0, nth;
+
+  console.clear()
+  while (count < 15) {
+    if (count === 0) {
+      nth = 0;
+    } else if (count === 1) {
+      nth = 1;
+    } else {
+      nth = n1 + n2;
+      n1 = n2;
+      n2 = nth;
+    }
+    console.log(`Passo ${count + 1}º: ${nth}`);
+    count++;
+  }
+
+  alert("Entre nas ferramentas de desenvolvedor para ver o resultado");
+}
+
+function exercise33() {
+  alert(`Você escolheu o ${addTextoBtn[32]}! Clique para continuar.`);
+
+  let gCelsius = 10;
+  let count = 0;
+
+  console.clear()
+  while (count < 10) {
+    let gFahren = (9 * gCelsius + 160) / 5;
+    console.log(`${gCelsius}º em Fahrenheit: ${gFahren}`);
+
+    gCelsius += 10;
+    count++;
+  }
+  alert("Entre nas ferramentas de desenvolvedor para ver o resultado");
+}
+
+function exercise34() {
+  alert(`Você escolheu o ${addTextoBtn[33]}! Clique para continuar.`);
+
+  let valor, somatoria = 0, count = 1;
+
+  while (count <= 10) {
+    valor = parseFloat(prompt(`Digite o ${count}º valor:`));
+    somatoria += valor;
+    count++;
+  }
+
+  alert(`A média da soma de todos os valores passados: ${somatoria / 10}`);
+}
+
+function exercise35() {
+  alert(`Você escolheu o ${addTextoBtn[34]}! Clique para continuar.`);
+
+  let ehPar = 0;
+  let auxiliar = 0;
+  let media;
+  let count = 50;
+
+  console.clear()
+  while (count <= 70) {
+    if (count % 2 === 0) {
+      ehPar += count;
+      console.log(`${ehPar} + ${count} = ${ehPar + count}`);
+      auxiliar++;
+    }
+    count++;
+  }
+
+  media = ehPar / auxiliar;
+  alert(`A média da soma dos números pares (entre 50 e 70) é: ${media}`);
+
+}
+
+function exercise36() {
+  alert(`Você escolheu o ${addTextoBtn[35]}! Clique para continuar.`);
+
+  let count = 0;
+  let area, largura, comprimento, totalArea = 0;
+  let vaiContinuar = 's';
+
+  const comodos = [];
+  const areas = [];
+
+  alert("Bem-vindo à sua calculadora de cômodos!");
+
+  console.clear()
+  while (vaiContinuar.toLowerCase() === 's') {
+    comodos[count] = prompt("Qual o nome do Cômodo:");
+
+    comprimento = parseFloat(prompt(`Qual o comprimento do(a) ${comodos[count]}:`));
+    largura = parseFloat(prompt(`Qual a largura do(a) ${comodos[count]}:`));
+
+    area = largura * comprimento;
+    areas[count] = area;
+    totalArea += area;
+
+    alert(`Área do cômodo ${comodos[count]}: ${areas[count]}`);
+
+    count++;
+
+    vaiContinuar = prompt("Deseja adicionar outro cômodo? (s/n): ");
+
+    if (vaiContinuar.toLowerCase() === 'n') {
+      break
+    }
+  }
+
+  count = 0;
+  while (count < 10) {
+    if (comodos[count] && areas[count] > 0) {
+      console.log(`O cômodo ${comodos[count]} tem ${areas[count]} de área.`);
+    }
+    count++;
+  }
+
+  alert(`Área total da casa: ${totalArea}\nPara ver todos os comodos, acesse a ferramenta de desenvolvedor.`);
+
+}
+
+function exercise37() {
+  alert(`Você escolheu o ${addTextoBtn[36]}! Clique para continuar.`);
+
+  let menor, maior, valor, count = 0;
+  let continuar = 's';
+
+  alert("Você pode digitar quantos valores quiser.\nMas valores negativos encerram!");
+
+  while (continuar.toLowerCase() === 's') {
+    valor = parseInt(prompt("Digite o valor: "));
+
+    if (count === 0) {
+      maior = valor;
+      menor = valor;
+    } else {
+      if (valor < 0) {
+        alert("Valor negativo! O programa irá encerrar");
+        continuar = 'n';
+      } else {
+        if (valor > maior) maior = valor;
+        if (valor < menor) menor = valor;
+      }
+    }
+    count++;
+  }
+
+  alert(`O menor valor foi: ${menor}\nO maior valor foi: ${maior}\nÚltimo valor digitado: ${valor}`);
 }
