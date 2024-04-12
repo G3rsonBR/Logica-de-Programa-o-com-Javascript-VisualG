@@ -28,7 +28,15 @@ fetch("exercises.json")
     });
 
     exercises.forEach((e, index) => {
-      let mainContent = document.querySelector(".exercises-box");
+      if (index == 0) {
+        const boxExercises = document.querySelector(".exercises-box");
+        const divExercises = document.createElement("div");
+
+        divExercises.setAttribute("class", `exercises firstChildExercisesException`)
+        boxExercises.appendChild(divExercises);
+      }
+
+      let mainContent = document.querySelector(".exercises");
       let btn = document.createElement("button");
 
       btn.innerHTML = e.texto;

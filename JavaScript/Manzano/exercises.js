@@ -1,7 +1,7 @@
 import addTextoBtn from './main.js'
 addTextoBtn.forEach(e => console.log(e))
 
-let numExercises = 13;
+let numExercises = 16;
 
 for (let i = 1; i <= numExercises; i++) {
   window[`exercise${i}`] = eval(`exercise${i}`);

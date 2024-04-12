@@ -14,7 +14,7 @@ fetch("exercises.json")
         })
       );
     });
-    
+
     // Se uma função existir, adicione ela ao array
     addTextoBtn.forEach((e, index) => {
       let functionName = "exercise" + (index + 1);
@@ -28,8 +28,23 @@ fetch("exercises.json")
       }
     });
 
+    let actualExercise = ''
     exercises.forEach((e, index) => {
-      let mainContent = document.querySelector(".exercises-box");
+      switch (index) {
+        case 0:
+          createExercisesDiv('Exercícios da página 25 e 26', 1);
+          actualExercise = ".exercises" + 1
+          break
+        case 13:
+          createExercisesDiv('Exercícios da página 41 e 42', 2);
+          actualExercise = ".exercises" + 2
+          break
+        default:
+          break
+      }
+
+      let mainContent = document.querySelector(`${actualExercise}`);
+
       let btn = document.createElement("button");
 
       btn.innerHTML = e.texto;
@@ -40,4 +55,15 @@ fetch("exercises.json")
   })
   .catch((error) => console.log(error));
 
+function createExercisesDiv(textInside, param) {
+  const boxExercises = document.querySelector(".exercises-box");
+  const divExercises = document.createElement("div");
+
+  divExercises.setAttribute("class", `exercises${param} exercises firstChildExercises`);
+  const text = document.createElement("p");
+
+  text.innerHTML = textInside;
+  boxExercises.appendChild(divExercises);
+  divExercises.appendChild(text);
+}
 export default addTextoBtn;
