@@ -1,17 +1,30 @@
 {
   "exercises": [
-    "Exercícios de Lógica - Celsius para Fahrenheit",
-    "Exercícios de Lógica - Fahrenheit para Celsius",
-    "Exercícios de Lógica - Volume Lata de Óleo",
-    "Exercícios de Lógica - Litros em Viajem",
-    "Exercícios de Lógica - Prestação em Atraso",
-    "Exercícios de Lógica - Troca Valores",
-    "Exercícios de Lógica - Soma e Multiplicação de 4 valores",
-    "Exercícios de Lógica - Volume de Caixa Retangular",
-    "Exercícios de Lógica - Quadrado da Diferença",
-    "Exercícios de Lógica - Conversão para Real",
-    "Exercícios de Lógica - Conversão para Dólar",
-    "Exercícios de Lógica - Soma do Quadrado de 3 valores",
-    "Exercícios de Lógica - Quadrado da Soma de 3 valores"
+    "Exercícios de Lógica1 - Celsius para Fahrenheit",
+    "Exercícios de Lógica1 - Fahrenheit para Celsius",
+    "Exercícios de Lógica1 - Volume Lata de Óleo",
+    "Exercícios de Lógica1 - Litros em Viajem",
+    "Exercícios de Lógica1 - Prestação em Atraso",
+    "Exercícios de Lógica1 - Troca Valores",
+    "Exercícios de Lógica1 - Soma e Multiplicação de 4 valores",
+    "Exercícios de Lógica1 - Volume de Caixa Retangular",
+    "Exercícios de Lógica1 - Quadrado da Diferença",
+    "Exercícios de Lógica1 - Conversão para Real",
+    "Exercícios de Lógica1 - Conversão para Dólar",
+    "Exercícios de Lógica1 - Soma do Quadrado de 3 valores",
+    "Exercícios de Lógica1 - Quadrado da Soma de 3 valores",
+
+    "Exercícios de Lógica2 - Diferença do Maior pelo Menor",
+    "Exercícios de Lógica2 - Módulo de um Número",
+    "Exercícios de Lógica2 - Média de Aluno",
+    "Exercícios de Lógica2 - Média de Aluno Complexa",
+    "Exercícios de Lógica2 - Calculo de Equação do 2º Grau",
+    "Exercícios de Lógica2 - Ordem Crescente",
+    "Exercícios de Lógica2 - Divisíveis por 2 e 3",
+    "Exercícios de Lógica2 - Maior e Menor entre 5 Valores",
+    "Exercícios de Lógica2 - Número Par ou Impar",
+    "Exercícios de Lógica2 - Número na Faixa Permitida",
+    "Exercícios de Lógica2 - Maior que 3?",
+    "Exercícios de Lógica2 - Sr. ou Sra."
   ]
 }

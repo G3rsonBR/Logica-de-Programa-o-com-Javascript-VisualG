@@ -66,4 +66,5 @@ function createExercisesDiv(textInside, param) {
   boxExercises.appendChild(divExercises);
   divExercises.appendChild(text);
 }
+
 export default addTextoBtn;
