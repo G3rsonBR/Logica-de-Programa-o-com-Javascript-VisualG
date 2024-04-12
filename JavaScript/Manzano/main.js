@@ -1,72 +1,43 @@
-function exercise1() {
-  let number1 = parseInt(prompt("Digite um valor: "))
-  let number2 = parseInt(prompt("Digite outro valor: "))
-  let ehMaior = ""
+const jsonDatas = [];
+const addTextoBtn = [];
+const exercises = [];
 
-  if (number1 > number2) ehMaior = `A diferença do maior valor pelo menor é: ${number1 - number2}` 
-  else ehMaior = `A diferença do maior valor pelo menor é: ${number2 - number1}` 
+fetch("exercises.json")
+  .then((resp) => resp.json())
+  .then((data) => {
+    jsonDatas.push(data.exercises);
 
-  alert(ehMaior)
-}
+    jsonDatas.forEach((e) => {
+      addTextoBtn.push(
+        e.forEach((el) => {
+          addTextoBtn.push(el);
+        })
+      );
+    });
+    
+    // Se uma função existir, adicione ela ao array
+    addTextoBtn.forEach((e, index) => {
+      let functionName = "exercise" + (index + 1);
+      if (typeof window[functionName] === "function") {
+        exercises.push({
+          id: index + 1,
+          texto: e,
+          func: window[functionName],
+        });
+        console.log("A função " + functionName + " existe.");
+      }
+    });
 
-function exercise2() {
-  let number = parseInt(prompt('Digite um valor: '))
-  let modulo = number < 0 ? number * -1 : number
+    exercises.forEach((e, index) => {
+      let mainContent = document.querySelector(".exercises-box");
+      let btn = document.createElement("button");
 
-  alert(`O modulo de ${number} é: ${modulo}`)
-}
+      btn.innerHTML = e.texto;
+      btn.setAttribute("onclick", `exercise${index + 1}()`);
+      btn.setAttribute("class", `btn`);
+      mainContent.appendChild(btn);
+    });
+  })
+  .catch((error) => console.log(error));
 
-function exercise4() {
-  let number = parseInt(prompt('Digite um valor: '))
-  let count = 1
-
-  while (count <= 10) {    
-    console.log(`${number} x ${count} = ${number * count}`)
-    count++
-  } 
-}
-
-function exercise5() {
-  let count = 1
-  let somar = 0
-
-  while (count <= 100) {
-    somar += count
-    count++
-    console.log(somar)
-  }
-}
-
-function exercise6() {
-  let count = 1
-  let somados = 0
-
-  while(count <= 500) {
-    if (count % 2 == 0) somados += count
-    count++
-    console.log(somados)
-  }
-}
-
-function exercise7() {
-  let count = 15
-  let acumulador = 0
-  
-  /*
-  // Forma 1 de fazer:
-  do {
-    console.log(count ** 2) 
-    count++
-  } while (count <= 200)
-  */
-
-  // Forma 2 de fazer:
-  do {
-    acumulador = count
-    acumulador *= acumulador
-    count++
-
-    console.log(acumulador)
-  } while (count <= 200)
-
-}
+export default addTextoBtn;
