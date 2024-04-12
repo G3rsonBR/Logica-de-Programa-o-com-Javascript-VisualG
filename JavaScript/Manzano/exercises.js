@@ -1,7 +1,7 @@
 import addTextoBtn from './main.js'
 addTextoBtn.forEach(e => console.log(e))
 
-let numExercises = 60;
+let numExercises = 46;
 
 for (let i = 1; i <= numExercises; i++) {
   window[`exercise${i}`] = eval(`exercise${i}`);
@@ -636,4 +636,195 @@ function exercise37() {
   }
 
   alert(`O menor valor foi: ${menor}\nO maior valor foi: ${maior}\nÚltimo valor digitado: ${valor}`);
+}
+// Fim Tarefas pag 41 e 42
+
+// Começo Tarefas pag 50
+function exercise38() {
+  alert(`Você escolheu o ${addTextoBtn[37]}! Clique para continuar.`);
+
+  let contadora;
+  contadora = 15;
+
+  console.clear()
+  do {
+    console.log(`O número ${contadora} ao quadrado é: ${contadora ** 2}`);
+    contadora++;
+  } while (contadora <= 200);
+
+  alert('Confira os resultados na ferramenta de desenvolvedor.');
+}
+
+function exercise39() {
+  alert(`Você escolheu o ${addTextoBtn[38]}! Clique para continuar.`);
+
+  let contadora = 1;
+  let somados = 0;
+
+  do {
+    if (contadora % 2 === 0) somados += contadora;
+    contadora++;
+  } while (contadora <= 500);
+
+  alert(`O valor da soma dos pares de 1 a 500 é: ${somados}`);
+
+}
+
+function exercise40() {
+  alert(`Você escolheu o ${addTextoBtn[39]}! Clique para continuar.`);
+
+  let count = 0;
+
+  console.clear()
+  do {
+    count++;
+    if (count % 4 === 0) console.log(`O número ${count} é divisível por 4`);
+  } while (count <= 200);
+
+  alert('Confira os resultados na ferramenta de desenvolvedor.');
+}
+
+function exercise41() {
+  alert(`Você escolheu o ${addTextoBtn[40]}! Clique para continuar.`);
+
+  let count = 0;
+  let atual = 0;
+
+  do {
+    atual += 2 ** count;
+    count++;
+  } while (count <= 64);
+
+  alert("(Considere o enunciado da questão...)");
+  alert(`A soma dos números de grãos em um tabuleiro de xadrez é: ${atual}`);
+
+}
+
+function exercise42() {
+  alert(`Você escolheu o ${addTextoBtn[41]}! Clique para continuar.`);
+
+  let count = 0;
+  let valor, somatorio = 0, fatorial;
+
+  do {
+    count++;
+    valor = parseInt(prompt(`Digite o ${count} valor:`));
+
+    fatorial = valor;
+    do {
+      valor--;
+      fatorial *= valor;
+    } while (valor > 1);
+
+    somatorio += fatorial;
+  } while (count < 15);
+
+  alert(`O somatório de todos os fatoriais dos números solicitados é: ${somatorio}`);
+
+}
+
+function exercise43() {
+  alert(`Você escolheu o ${addTextoBtn[42]}! Clique para continuar.`);
+
+  let count = 1;
+  let valor, somatorio = 0, media;
+
+  alert("Você poderá digitar quantos valores quiser, mas se for negativo, o programa encerra.");
+
+  do {
+    valor = parseFloat(prompt(`Digite o ${count}º valor:`));
+
+    somatorio += valor;
+
+    if (valor < 0) alert("Valor digitado é negativo. Encerrando o programa.");
+    else count++;
+
+  } while (valor >= 0);
+
+  if (valor < 0) media = somatorio / (count - 1);
+
+  alert(`Soma de todos os valores: ${somatorio}\nMédia da soma: ${media}\nQuantidade de elementos: ${count - 1}`);
+
+}
+
+function exercise44() {
+  alert(`Você escolheu o ${addTextoBtn[43]}! Clique para continuar.`);
+
+  let count = 1;
+  let fatorial = 1;
+
+  do {
+    if (count % 2 === 1) fatorial *= count;
+    count++;
+  } while (count <= 10);
+
+  alert(`Fatorial dos números ímpares entre 1 e 10: ${fatorial}`);
+
+}
+
+function exercise45() {
+  alert(`Você escolheu o ${addTextoBtn[44]}! Clique para continuar.`);
+
+  let count = 1;
+  let area = 0, largura = 0, comprimento = 0, totalArea = 0;
+  let vaiContinuar = '';
+  let comodos = [];
+  let areas = [];
+
+  alert("Bem vindo a sua calculadora de cômodos!");
+
+  console.clear()
+  do {
+    comodos[count] = prompt(`Qual o nome do Cômodo:`);
+
+    comprimento = parseFloat(prompt(`Qual o comprimento do(a) ${comodos[count]}:`));
+    largura = parseFloat(prompt(`Qual a largura do(a) ${comodos[count]}:`));
+
+    area = largura * comprimento;
+    areas[count] = area;
+    totalArea += area;
+
+    alert(`Área do cômodo ${comodos[count]}: ${areas[count]}`);
+
+    count++;
+
+
+    vaiContinuar = prompt("Deseja adicionar outro cômodo? (s/n):");
+    if (vaiContinuar.toLowerCase() === "n") {
+      break
+    }
+
+  } while (vaiContinuar === "s");
+
+  count = 1;
+  do {
+    if (comodos[count] !== "" && areas[count] > 0) {
+      console.log(`Cômodo ${comodos[count]} tem ${areas[count]} de área`);
+    }
+    count++;
+  } while (count <= 10);
+
+  alert(`Área total da Casa: ${totalArea}`);
+  alert("Confira os comodos na ferramenta de desenvolvedor.");
+}
+
+function exercise46() {
+  alert(`Você escolheu o ${addTextoBtn[45]}! Clique para continuar.`);
+
+  let divisor = 0, dividendo = 0, count = 0;
+  let continuar = '';
+
+  dividendo = parseInt(prompt("Digite o dividendo:"));
+  divisor = parseInt(prompt("Digite o divisor:"));
+
+  do {
+    if (dividendo >= divisor) {
+      dividendo -= divisor;
+      count++;
+    } else continuar = "n";
+    
+  } while (continuar !== "n");
+
+  alert(`A parte inteira da divisão é: ${count}`);
+
 }

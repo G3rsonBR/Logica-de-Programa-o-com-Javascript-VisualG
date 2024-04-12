@@ -41,7 +41,7 @@ fetch("exercises.json")
 
       btn.innerHTML = e.texto;
       btn.setAttribute("onclick", `exercise${index + 1}()`);
-      btn.setAttribute("class", `btn`);
+      btn.setAttribute("class", `btn btn-exercises`);
       mainContent.appendChild(btn);
     });
   })

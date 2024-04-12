@@ -40,8 +40,12 @@ fetch("exercises.json")
           actualExercise = ".exercises" + 2
           break
         case 25:
-          createExercisesDiv('Exercícios da página 46 e 48', 3);
+          createExercisesDiv('Exercícios da página 46 e 47', 3);
           actualExercise = ".exercises" + 3
+          break
+        case 37:
+          createExercisesDiv('Exercícios da página 50', 4);
+          actualExercise = ".exercises" + 4
           break
         default:
           break
@@ -53,7 +57,7 @@ fetch("exercises.json")
 
       btn.innerHTML = e.texto;
       btn.setAttribute("onclick", `exercise${index + 1}()`);
-      btn.setAttribute("class", `btn`);
+      btn.setAttribute("class", `btn btn-exercises`);
       mainContent.appendChild(btn);
     });
   })
