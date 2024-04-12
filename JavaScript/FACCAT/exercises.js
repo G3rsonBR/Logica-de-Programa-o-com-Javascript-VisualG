@@ -774,7 +774,7 @@ function exercise42() {
   // Reescreva o exercício anterior utilizando a estrutura ENQUANTO. 
   alert(`Você escolheu o ${addTextoBtn[41]}! Clique para continuar.`);
 
-  let num1, num2;
+  let num1, num2 = 0;
   num1 = parseInt(prompt("Digite o Primeiro valor: "));
 
   while (num2 === 0) {
@@ -812,7 +812,7 @@ function exercise44() {
   alert(`Você escolheu o ${addTextoBtn[43]}! Clique para continuar.`);
 
   // Declaração das variáveis
-  let num1, num2;
+  let num1, num2 = 0;
 
   num1 = parseInt(prompt("Digite o Primeiro valor: "));
   while (num2 === 0) {
