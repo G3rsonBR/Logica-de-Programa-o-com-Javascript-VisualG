@@ -47,6 +47,10 @@ fetch("exercises.json")
           createExercisesDiv('Exercícios da página 50', 4);
           actualExercise = ".exercises" + 4
           break
+        case 46:
+          createExercisesDiv('Exercícios da página 66', 5);
+          actualExercise = ".exercises" + 5
+          break
         default:
           break
       }

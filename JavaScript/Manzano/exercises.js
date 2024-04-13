@@ -1,7 +1,7 @@
 import addTextoBtn from './main.js'
 addTextoBtn.forEach(e => console.log(e))
 
-let numExercises = 46;
+let numExercises = 57;
 
 for (let i = 1; i <= numExercises; i++) {
   window[`exercise${i}`] = eval(`exercise${i}`);
@@ -822,9 +822,168 @@ function exercise46() {
       dividendo -= divisor;
       count++;
     } else continuar = "n";
-    
+
   } while (continuar !== "n");
 
   alert(`A parte inteira da divisão é: ${count}`);
 
+}
+// Fim Tarefas pag 50
+
+// Tarefas pag 60
+function exercise47() {
+  alert(`Você escolheu o ${addTextoBtn[46]}! Clique para continuar.`);
+
+  console.clear()
+  for (let contadora = 15; contadora <= 200; contadora++) {
+    console.log(`O número ${contadora} ao quadrado é: ${contadora ** 2}`);
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+}
+
+function exercise48() {
+  alert(`Você escolheu o ${addTextoBtn[47]}! Clique para continuar.`);
+
+  let num = parseInt(prompt("Digite um número:"));
+
+  console.clear()
+  for (let count = 1; count <= 10; count++) {
+    console.log(`${num} x ${count} = ${num * count}`);
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+
+}
+
+function exercise49() {
+  alert(`Você escolheu o ${addTextoBtn[48]}! Clique para continuar.`);
+
+  let somados = 0;
+
+  for (let count = 1; count <= 100; count++) somados += count;
+
+  alert(`O Somatório dos números de 1 a 100: ${somados}`);
+}
+
+function exercise50() {
+  alert(`Você escolheu o ${addTextoBtn[49]}! Clique para continuar.`);
+
+  let somados = 0;
+
+  for (let count = 1; count <= 500; count++) {
+    if (count % 2 === 0) somados += count;
+  }
+
+  alert(`O Somatório dos pares de 1 a 500: ${somados}`);
+}
+
+function exercise51() {
+  alert(`Você escolheu o ${addTextoBtn[50]}! Clique para continuar.`);
+
+  console.clear()
+  for (let count = 0; count <= 20; count++) {
+    if (count % 2 === 1) console.log(`O número ${count} é ímpar.`);
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+}
+
+function exercise52() {
+  alert(`Você escolheu o ${addTextoBtn[51]}! Clique para continuar.`);
+
+  console.clear()
+  for (let count = 1; count <= 200; count++) {
+    if (count % 4 === 0) console.log(`O número ${count} é divisível por 4.`);
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+
+}
+
+function exercise53() {
+  alert(`Você escolheu o ${addTextoBtn[52]}! Clique para continuar.`);
+
+  let base = 3;
+  let calc;
+
+  console.clear()
+  for (let count = 0; count <= 15; count++) {
+    if (count === 0) calc = 1;
+    else {
+      calc *= base;
+      console.log(`${base} ^ ${count} = ${calc}`);
+    }
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+}
+
+function exercise54() {
+  alert(`Você escolheu o ${addTextoBtn[53]}! Clique para continuar.`);
+
+  let calc;
+  let base = parseInt(prompt("Digite a base:"));
+  let expoente = parseInt(prompt("Digite o expoente:"));
+
+  console.clear()
+  for (let count = 0; count <= expoente; count++) {
+    if (count === 0) calc = 1;
+    else calc *= base;
+    console.log(`${base} ^ ${count} = ${calc}`);
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+}
+
+function exercise55() {
+  alert(`Você escolheu o ${addTextoBtn[54]}! Clique para continuar.`);
+  let n1 = 1;
+  let n2 = 1;
+  let nth;
+
+  console.clear()
+  for (let count = 0; count <= 15; count++) {
+    if (count === 0 || count === 1) nth = 1;
+    else {
+      nth = n1 + n2;
+      n1 = n2;
+      n2 = nth;
+    }
+    console.log(`${count}º termo de Fibonacci: ${nth}`);
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+}
+
+function exercise56() {
+  alert(`Você escolheu o ${addTextoBtn[55]}! Clique para continuar.`);
+
+  let gFahren;
+
+  console.clear()
+  for (let gCelsius = 0; gCelsius <= 100; gCelsius += 10) {
+    gFahren = (9 * gCelsius + 160) / 5;
+    console.log(`${gCelsius}°C em Graus Fahrenheit: ${gFahren}`);
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
+}
+
+function exercise57() {
+  alert(`Você escolheu o ${addTextoBtn[56]}! Clique para continuar.`);
+
+  let fatorial = 1;
+  let fatorial1;
+
+  console.clear()
+  for (let count = 0; count <= 10; count++) {
+    if (count % 2 === 1) {
+      fatorial1 = fatorial;
+      fatorial *= count;
+      console.log(`${count} x ${fatorial1} = ${fatorial}`);
+    }
+  }
+
+  alert("Confira os resultados na ferramenta de desenvolvedor.");
 }

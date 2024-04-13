@@ -1,7 +1,7 @@
 Algoritmo "ExercicioBRepita"
-// Disciplina   : [Linguagem e Lógica de Programação com JS]
+// Disciplina   : [Linguagem e Lï¿½gica de Programaï¿½ï¿½o com JS]
 // Professor   : Jailson
-// Descrição   : Elaborar um programa que apresente no final o somatório dos valores pares existentes na faixa de 1 até 500.
+// Descriï¿½ï¿½o   : Elaborar um programa que apresente no final o somatï¿½rio dos valores pares existentes na faixa de 1 atï¿½ 500.
 // Autor(a)    : Gerson Lucas Silva Leite
 // Data atual  : 03/04/2024
 Var
@@ -16,6 +16,6 @@ Inicio
       contadora <- contadora + 1
    Ate contadora > 500
 
-   Escreval("O valor da soma dos pares de 1 a 500 é: ", somados)
+   Escreval("O valor da soma dos pares de 1 a 500 ï¿½: ", somados)
 
 Fimalgoritmo
